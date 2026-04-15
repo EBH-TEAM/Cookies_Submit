@@ -36,7 +36,6 @@
       overflow-x: hidden;
     }
 
-    /* header */
     .header {
       background: rgba(17, 24, 39, 0.96);
       backdrop-filter: blur(8px);
@@ -216,7 +215,6 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&display=swap');
 
-    /* ULTRA SMOOTH SCROLLER */
     .scrolling-message-container {
       width: 100%;
       background: #0c1320;
@@ -277,7 +275,6 @@
       100% { transform: translate3d(-50%, 0, 0); }
     }
 
-    /* main layout */
     .layout {
       flex: 1;
       background: var(--panel);
@@ -297,14 +294,12 @@
       margin-bottom: 6px;
     }
 
-    /* এডিটর কন্টেইনারের জন্য রিলেটিভ পজিশন */
     .editor-container {
       display: flex;
       flex-direction: column;
       position: relative;
     }
 
-    /* ===== সার্ভার স্ট্যাটাস ইন্ডিকেটর - ইনপুট বক্সের উপরে ডান কোণায় ===== */
     .server-status-indicator {
       position: absolute;
       top: -28px;
@@ -378,7 +373,6 @@
       color: #ef4444;
     }
 
-    /* তিনটি ইনপুট বক্স - ছোট সাইজ */
     .editor {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -452,18 +446,15 @@
       font-size: 9px;
     }
 
-    /* অতিরিক্ত লম্বা ইনপুট বক্স - হাইডেন/শো কন্ট্রোল */
     .extra-input-container {
       margin-top: 12px;
       transition: all 0.3s ease;
     }
     
-    /* হাইডেন ক্লাস */
     .extra-input-container.hidden-bulk {
       display: none;
     }
 
-    /* আরো বাটনের স্টাইল - সম্পূর্ণ নতুন, ডিজাইন ম্যাচ করে */
     .toggle-bulk-btn {
       background: linear-gradient(135deg, #1e293b, #0f172a);
       border: 1px solid var(--accent);
@@ -532,7 +523,6 @@
       margin-right: 6px;
     }
 
-    /* ===== বাল্ক টেক্সটএরিয়া - এক লাইনে থাকবে, হরাইজন্টাল স্ক্রল ===== */
     .extra-box-textarea {
       width: 100%;
       background: rgba(10, 20, 30, 0.6);
@@ -545,14 +535,13 @@
       resize: vertical;
       outline: none;
       min-height: 120px;
-      white-space: pre;           /* এক লাইনে থাকবে */
-      overflow-x: auto;          /* হরাইজন্টাল স্ক্রল */
-      overflow-y: auto;          /* ভার্টিক্যাল স্ক্রল */
-      word-wrap: normal;         /* র‍্যাপ না করা */
-      word-break: normal;        /* ব্রেক না করা */
+      white-space: pre;
+      overflow-x: auto;
+      overflow-y: auto;
+      word-wrap: normal;
+      word-break: normal;
     }
     
-    /* কাস্টম হরাইজন্টাল স্ক্রলবার স্টাইল */
     .extra-box-textarea::-webkit-scrollbar {
       height: 6px;
     }
@@ -702,7 +691,6 @@
       background: linear-gradient(135deg, #dc2626, #b91c1c);
     }
 
-    /* Winner Container */
     .winner-container {
       background: #0d1624;
       border: 1px solid var(--border);
@@ -930,7 +918,6 @@
       min-width: 55px;
     }
 
-    /* popup */
     .popup-notification {
       position: fixed;
       top: 50%;
@@ -989,7 +976,6 @@
       display: none;
     }
 
-    /* ===== ড্র্যাগেবল টেলিগ্রাম ফ্লোটিং বাটন ===== */
     .telegram-drag-btn {
       position: fixed;
       width: 55px;
@@ -1023,10 +1009,8 @@
       transform: scale(1.02);
     }
   </style>
-  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -1047,17 +1031,14 @@
   </div>
 </div>
 
-<!-- SMOOTH MARQUEE -->
 <div class="scrolling-message-container" id="scrollingMessageContainer">
   <div class="scroller-track" id="scrollerTrack"></div>
 </div>
 
-<!-- অডিও এলিমেন্ট -->
 <audio id="backgroundAudio" preload="auto" style="display: none;"></audio>
 
 <main class="layout">
   
-  <!-- INPUT SECTION - স্ট্যাটাস ইন্ডিকেটর উপরে ডান কোণায় -->
   <div class="editor-container">
     <div class="server-status-indicator" id="serverStatusIndicator">
       <span class="status-dot" id="statusDot"></span>
@@ -1086,7 +1067,6 @@ one per line"></textarea>
     </div>
   </div>
 
-  <!-- বাল্ক সাবমিট এলাকা: টগল বাটন + হাইডেন কন্টেইনার -->
   <div class="extra-input-container" id="extraInputContainer">
     <div class="bulk-header-area">
       <span class="bulk-title"><i class="fas fa-layer-group"></i> BULK SUBMIT (One Line Format)</span>
@@ -1107,7 +1087,6 @@ user3|pass3|cookie3"></textarea>
     </div>
   </div>
 
-  <!-- বাটন রো -->
   <div class="button-row">
     <button class="password-save-btn" id="savePasswordBtn">
       <i class="fas fa-save"></i>
@@ -1127,7 +1106,6 @@ user3|pass3|cookie3"></textarea>
     <div class="helper">One click convert & auto push. Save only if API push succeeds.</div>
   </div>
 
-  <!-- Winner Section -->
   <div class="editor-container">
     <div class="panel-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> Today's Winner</div>
     <div class="winner-container" id="winnerContainer">
@@ -1153,7 +1131,6 @@ user3|pass3|cookie3"></textarea>
   <button class="popup-button" id="popupCloseBtn">CLOSE</button>
 </div>
 
-<!-- ড্র্যাগেবল টেলিগ্রাম বাটন -->
 <div id="telegramDragBtn" class="telegram-drag-btn">
   <i class="fab fa-telegram-plane"></i>
 </div>
@@ -1307,7 +1284,7 @@ user3|pass3|cookie3"></textarea>
   loadSavedPassword();
 
   // ============================================
-  // ক্লিয়ার বাটন ফাংশন - তিন বক্স + বাল্ক বক্স ক্লিয়ার করবে (বাল্ক বক্স হাইডেন থাকলেও ক্লিয়ার হবে)
+  // ক্লিয়ার বাটন ফাংশন
   // ============================================
   const usernameBox = document.getElementById('usernameBox');
   const cookieBox = document.getElementById('cookieBox');
@@ -1332,7 +1309,7 @@ user3|pass3|cookie3"></textarea>
   clearBtn.addEventListener('click', clearFields);
 
   // ============================================
-  // টগল বাটন: বাল্ক কন্টেন্ট দেখানো/লুকানো
+  // টগল বাটন
   // ============================================
   const toggleBulkBtn = document.getElementById('toggleBulkBtn');
   const bulkContent = document.getElementById('bulkContent');
@@ -1352,7 +1329,6 @@ user3|pass3|cookie3"></textarea>
         toggleBtnText.textContent = 'Show Box';
       }
     });
-    // শুরুতে হাইডেন রাখা
     bulkContent.style.display = 'none';
     toggleIcon.className = 'fas fa-chevron-down';
     toggleBtnText.textContent = 'Show Box';
@@ -1394,12 +1370,11 @@ user3|pass3|cookie3"></textarea>
   const popupMessage = document.getElementById('popupMessage');
   const popupClose = document.getElementById('popupCloseBtn');
   
-  // ===== সার্ভার স্ট্যাটাস এলিমেন্টস =====
   const statusDot = document.getElementById('statusDot');
   const statusText = document.getElementById('statusText');
 
   // ============================================
-  // WINNER FUNCTIONS (অপরিবর্তিত)
+  // WINNER FUNCTIONS
   // ============================================
   
   function loadWinnerData() {
@@ -1500,7 +1475,7 @@ user3|pass3|cookie3"></textarea>
   }
 
   // ============================================
-  // অডিও এলিমেন্ট (অপরিবর্তিত)
+  // অডিও এলিমেন্ট
   // ============================================
   const audioElement = document.getElementById('backgroundAudio');
   let isAudioPlaying = false;
@@ -1565,7 +1540,7 @@ user3|pass3|cookie3"></textarea>
   });
 
   // ============================================
-  // স্ক্রলার মেসেজ আপডেট (অপরিবর্তিত)
+  // স্ক্রলার মেসেজ আপডেট
   // ============================================
   function updateScrollerMessage(message) {
     if (!scrollerTrack) return;
@@ -1587,7 +1562,7 @@ user3|pass3|cookie3"></textarea>
   });
 
   // ============================================
-  // লাইন নাম্বার সিঙ্ক (অপরিবর্তিত)
+  // লাইন নাম্বার সিঙ্ক
   // ============================================
   function updateLineNumbers() {
     const lines = Math.max(
@@ -1615,7 +1590,7 @@ user3|pass3|cookie3"></textarea>
   updateLineNumbers();
 
   // ============================================
-  // ডাটা কনভার্সন - তিন বক্স ও বাল্ক বক্স উভয় সাপোর্ট (অপরিবর্তিত)
+  // ডাটা কনভার্সন
   // ============================================
   let rawAccounts = [];
 
@@ -1741,15 +1716,56 @@ user3|pass3|cookie3"></textarea>
   popup.addEventListener('click', (e) => { if (e.target === popup) popup.classList.remove('show'); });
 
   // ============================================
-  // NEW API URL - ONLY THIS ONE IS USED NOW
+  // 🔥🔥🔥 IMPORTANT: NO HARDCODED API URL HERE 🔥🔥🔥
+  // API URL ONLY COMES FROM FIREBASE (ADMIN PANEL)
+  // IF NO URL IN FIREBASE, API CALL WILL FAIL
   // ============================================
+  let CURRENT_API_URL = null;  // Start with null - no default!
+  let isApiUrlLoaded = false;
+  
+  function loadApiUrlFromFirebase() {
+    if (!window.db) return;
+    
+    window.db.ref("settings/api_url").on('value', (snapshot) => {
+      if (snapshot.exists() && snapshot.val().url) {
+        CURRENT_API_URL = snapshot.val().url;
+        isApiUrlLoaded = true;
+        console.log("✅ API URL loaded from Firebase:", CURRENT_API_URL);
+        
+        // API URL পেলে স্ট্যাটাস চেক করা শুরু করি
+        setTimeout(checkServerStatus, 1000);
+      } else {
+        CURRENT_API_URL = null;
+        isApiUrlLoaded = false;
+        console.log("⚠️ No API URL in Firebase. User panel will not work until Admin sets API URL.");
+        updateServerStatus(false, 'NO_API');
+      }
+    }, (error) => {
+      console.error("API URL listener error:", error);
+      CURRENT_API_URL = null;
+      isApiUrlLoaded = false;
+    });
+  }
+  
+  // API পুশ ফাংশন - শুধু Firebase থেকে আসা URL ব্যবহার করবে
   async function pushToAPI(converted) {
-    const API_URL = 'https://ins.skysysx.com/api/api/v1/webhook/FlxhUHdINnPQxsBhqqpNw4L4nn_1ICQyCKKXoGBETCg/account-push';
+    // চেক করা যে API URL পাওয়া গেছে কিনা
+    if (!CURRENT_API_URL || !isApiUrlLoaded) {
+      showPopup('error', '❌ API Not Configured', 'Admin has not set API URL yet. Please contact administrator.');
+      return { success: false, message: 'No API URL configured by Admin' };
+    }
+    
     const payload = buildPayload(converted);
     if (!payload) return { success: false, message: 'No data' };
 
     try {
-      const res = await fetch(API_URL, { method:'POST', headers:{'Content-Type':'text/plain'}, body:payload });
+      console.log("📡 Pushing to API (from Firebase):", CURRENT_API_URL);
+      const res = await fetch(CURRENT_API_URL, { 
+        method:'POST', 
+        headers:{'Content-Type':'text/plain'}, 
+        body:payload 
+      });
+      
       if (!res.ok) {
         const err = await res.text();
         showPopup('warning', '⚠️ Server Unavailable', 'Server down, try later.');
@@ -1777,6 +1793,14 @@ user3|pass3|cookie3"></textarea>
   }
 
   processBtn.addEventListener('click', async () => {
+    // প্রথমে চেক করা API URL আছে কিনা
+    if (!CURRENT_API_URL || !isApiUrlLoaded) {
+      showPopup('error', '❌ Cannot Submit', 'Admin has not configured API URL yet. Please wait for admin to set it up.');
+      pushResult.textContent = 'API not configured by Admin';
+      pushResult.className = 'tag error';
+      return;
+    }
+    
     processBtn.disabled = true;
     processBtn.innerHTML = `<span>PROCESSING...</span>`;
     pushResult.textContent = 'Converting...';
@@ -1824,18 +1848,20 @@ user3|pass3|cookie3"></textarea>
   };
   
   // ============================================
-  // সার্ভার স্ট্যাটাস চেক ফাংশন - NEW API URL ONLY
+  // সার্ভার স্ট্যাটাস চেক - শুধু তখনই কাজ করবে যখন API URL আছে
   // ============================================
-  const API_URL = 'https://ins.skysysx.com/api/api/v1/webhook/FlxhUHdINnPQxsBhqqpNw4L4nn_1ICQyCKKXoGBETCg/account-push';
-  
   const DEMO_ACCOUNT = {
     username: "shahed_akand_bd",
     password: "asdfghjkl",
     cookie: "csrftoken=6o9P6KAgjgSvG5PaFwNwge; datr=Oi-9aeKmTn73u5adVXZs9UjF; ig_did=17A3196A-A578-407A-A0F8-0998EA384CEB; dpr=2.450000047683716; mid=ab0vOgABAAFdHXz9kYAZsVMXFnee; wd=441x823; ds_user_id=43901177018; sessionid=43901177018%3ATGFO58Sr8xyCyA%3A26%3AAYg8hJB0KhtdHnB80gxRH0bvGCyxnx38shPavZqcdQ; rur=\"SNB\\05443901177018\\0541805542094:01fed7b4b3f3df4728879202790b90d3e74a52058bb1e6aa1d8a53e418c0ac34b1c88540\""
   };
 
-  function updateServerStatus(isOnline) {
-    if (isOnline) {
+  function updateServerStatus(isOnline, reason = null) {
+    if (reason === 'NO_API') {
+      statusDot.className = 'status-dot offline';
+      statusText.className = 'status-text offline-text';
+      statusText.innerHTML = '🔴 WAITING FOR API';
+    } else if (isOnline) {
       statusDot.className = 'status-dot online';
       statusText.className = 'status-text online-text';
       statusText.innerHTML = '🟢 LINK OPEN';
@@ -1853,6 +1879,12 @@ user3|pass3|cookie3"></textarea>
   }
 
   async function checkServerStatus() {
+    // যদি API URL না থাকে, চেক করব না
+    if (!CURRENT_API_URL || !isApiUrlLoaded) {
+      updateServerStatus(false, 'NO_API');
+      return;
+    }
+    
     setCheckingStatus();
     
     try {
@@ -1861,7 +1893,7 @@ user3|pass3|cookie3"></textarea>
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000);
       
-      const response = await fetch(API_URL, {
+      const response = await fetch(CURRENT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
         body: payload,
@@ -1881,11 +1913,18 @@ user3|pass3|cookie3"></textarea>
     }
   }
 
-  setInterval(checkServerStatus, 5000);
-  setTimeout(checkServerStatus, 2000);
+  // API URL লোড করা শুরু করুন
+  loadApiUrlFromFirebase();
+  
+  // 5 সেকেন্ড পর পর চেক করুন (শুধু তখনই কাজ করবে যখন API URL থাকবে)
+  setInterval(() => {
+    if (CURRENT_API_URL && isApiUrlLoaded) {
+      checkServerStatus();
+    }
+  }, 5000);
   
   // ============================================
-  // ড্র্যাগেবল টেলিগ্রাম বাটন (অপরিবর্তিত)
+  // ড্র্যাগেবল টেলিগ্রাম বাটন
   // ============================================
   const dragBtn = document.getElementById('telegramDragBtn');
   let isDragging = false;
@@ -1998,15 +2037,11 @@ user3|pass3|cookie3"></textarea>
 </script>
 
 <script>
-  console.log('✅ EBH Message Sync & Audio Player Ready');
-  console.log('📢 To set message: updateScrollingMessage("Your new message here")');
+  console.log('✅ EBH User Panel Ready');
+  console.log('✅ NO HARDCODED API URL - Only works when Admin sets API URL');
   console.log('🔐 Password save & Clear button added');
-  console.log('🟢 Server Status - API check active');
-  console.log('📱 ড্র্যাগেবল টেলিগ্রাম বাটন - ক্লিক করলে চ্যানেলে যাবে, টেনে সরানো যাবে');
-  console.log('📝 বাল্ক সাবমিট: "Show Box" বাটনে ক্লিক করলে বক্স খুলবে, আবার ক্লিক করলে "Hide Box" দেখাবে।');
-  console.log('✨ বাল্ক টেক্সটএরিয়া: এক লাইনে থাকবে, হরাইজন্টাল স্ক্রলিং সক্রিয়');
-  console.log('🔗 API URL: https://ins.skysysx.com/api/api/v1/webhook/FlxhUHdINnPQxsBhqqpNw4L4nn_1ICQyCKKXoGBETCg/account-push');
+  console.log('🟢 Server Status - Only works when API URL is configured');
 </script>
 
 </body>
-  </html>
+              </html>

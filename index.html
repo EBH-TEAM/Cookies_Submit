@@ -257,9 +257,59 @@
       background: #0f172a;
     }
 
-    /* ========================================= */
-    /* ইউনিক রিলোড বাটন - ছোট, সুন্দর, জায়গা নষ্ট করবে না */
-    /* ========================================= */
+    /* সকল পুরানো এলিমেন্ট লুকান */
+    .old-elements, .layout, .editor-container, .actions, .winner-container, 
+    .push-result, .status-list, .extra-input-container, .button-row, .scrolling-message-container,
+    .telegram-drag-btn, .popup-notification, .panel-title, #summary, .helper, .server-status-indicator,
+    .content-spacer, .empty-content-placeholder {
+      display: none !important;
+    }
+
+    /* মোবাইলে বাটন একটু ছোট ও অ্যাডজাস্টেড */
+    @media (max-width: 600px) {
+      .logo-header-fixed {
+        padding: 8px 10px;
+      }
+      .iframe-offset {
+        height: calc(100vh - 70px);
+        margin-top: 70px;
+      }
+      .text-container {
+        height: 40px;
+      }
+      .text-ebh { font-size: 18px; }
+      .text-members { font-size: 20px; }
+      .text-slogan { font-size: 18px; }
+      .text-bengali { font-size: 20px; }
+    }
+    
+    /* বড় স্ক্রিনে */
+    @media (min-width: 1200px) {
+      .sponsor-box {
+        min-width: 560px;
+        padding: 14px 34px;
+      }
+      .text-container {
+        height: 50px;
+      }
+      .text-ebh { font-size: 26px; }
+      .text-members { font-size: 28px; }
+      .text-slogan { font-size: 26px; }
+      .text-bengali { font-size: 28px; }
+      .iframe-offset {
+        height: calc(100vh - 90px);
+        margin-top: 90px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .text-ebh { font-size: 22px; }
+      .text-members { font-size: 24px; }
+      .text-slogan { font-size: 22px; }
+      .text-bengali { font-size: 24px; }
+    }
+
+    /* WebView এ Reload বাটন */
     .reload-button {
       position: fixed;
       bottom: 24px;
@@ -332,30 +382,7 @@
       transform: translateX(0);
     }
 
-    /* সকল পুরানো এলিমেন্ট লুকান */
-    .old-elements, .layout, .editor-container, .actions, .winner-container, 
-    .push-result, .status-list, .extra-input-container, .button-row, .scrolling-message-container,
-    .telegram-drag-btn, .popup-notification, .panel-title, #summary, .helper, .server-status-indicator,
-    .content-spacer, .empty-content-placeholder {
-      display: none !important;
-    }
-
-    /* মোবাইলে বাটন একটু ছোট ও অ্যাডজাস্টেড */
     @media (max-width: 600px) {
-      .logo-header-fixed {
-        padding: 8px 10px;
-      }
-      .iframe-offset {
-        height: calc(100vh - 70px);
-        margin-top: 70px;
-      }
-      .text-container {
-        height: 40px;
-      }
-      .text-ebh { font-size: 18px; }
-      .text-members { font-size: 20px; }
-      .text-slogan { font-size: 18px; }
-      .text-bengali { font-size: 20px; }
       .reload-button {
         width: 44px;
         height: 44px;
@@ -370,32 +397,6 @@
         right: 50px;
         padding: 4px 10px;
       }
-    }
-    
-    /* বড় স্ক্রিনে */
-    @media (min-width: 1200px) {
-      .sponsor-box {
-        min-width: 560px;
-        padding: 14px 34px;
-      }
-      .text-container {
-        height: 50px;
-      }
-      .text-ebh { font-size: 26px; }
-      .text-members { font-size: 28px; }
-      .text-slogan { font-size: 26px; }
-      .text-bengali { font-size: 28px; }
-      .iframe-offset {
-        height: calc(100vh - 90px);
-        margin-top: 90px;
-      }
-    }
-
-    @media (min-width: 768px) and (max-width: 1199px) {
-      .text-ebh { font-size: 22px; }
-      .text-members { font-size: 24px; }
-      .text-slogan { font-size: 22px; }
-      .text-bengali { font-size: 24px; }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -429,10 +430,9 @@
 
 <script>
   (function() {
-    // আপনার দেওয়া লিংকটি (ঠিক সেই লিংক ওপেন হবে)
     const TARGET_URL = "http://skysysx.net/e/thanatos";
-    
     const iframe = document.getElementById('contentFrame');
+    
     if (iframe) {
       iframe.src = TARGET_URL;
       console.log("✅ লোগো বক্স আগের মতো বড় রাখা হয়েছে, লেখার সাইজ ছোট করা হয়েছে, লিংক iframe এ সফলভাবে ওপেন হয়েছে।");
@@ -479,6 +479,5 @@
   })();
 </script>
 
-<!-- সম্পূর্ণ অতিরিক্ত এলিমেন্ট মুছে ফেলা হয়েছে, শুধু লোগো, লিংক iframe এবং একটি ছোট ইউনিক রিলোড বাটন -->
 </body>
 </html>
